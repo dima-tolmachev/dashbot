@@ -1,0 +1,33 @@
+{
+    "name": "dashbot",
+    "version": "1.0.0",
+    "description": "Dashboard for you private discord server",
+    "main": "build/index.js",
+    "scripts": {
+        "format": "npx prettier --write .",
+        "dev": "npm run format && ts-node src/index.ts",
+        "dev-fast": "ts-node src/index.ts",
+        "build": "tsc",
+        "start": "node build/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dima-tolmachev/dashbot.git"
+    },
+    "author": "dima",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/dima-tolmachev/dashbot/issues"
+    },
+    "homepage": "https://github.com/dima-tolmachev/dashbot#readme",
+    "devDependencies": {
+        "@types/node": "^18.6.1",
+        "prettier": "2.7.1"
+    },
+    "dependencies": {
+        "@discordjs/rest": "^1.0.1",
+        "discord.js": "^13.8.1",
+        "dotenv": "^16.0.1",
+        "mongoose": "^6.4.7"
+    }
+}
