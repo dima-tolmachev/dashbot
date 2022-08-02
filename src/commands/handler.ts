@@ -1,4 +1,5 @@
 import { Client, Message } from 'discord.js';
+import help from './everyone/help';
 import config from './admin/showConfig';
 import show from './admin/showMember';
 import freeze from './admin/freeze';
@@ -9,6 +10,7 @@ import details from './everyone/details';
 import reset from './everyone/reset';
 
 const commands: any = {
+    help,
     config,
     show,
     freeze,
