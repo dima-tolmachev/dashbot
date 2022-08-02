@@ -23,9 +23,7 @@ const client = new Client({
 (async () => {
     try {
         // Including all events
-        const eventFiles = fs
-            .readdirSync('./src/events')
-            .filter((file) => file.endsWith('.ts') || file.endsWith('.js'));
+        const eventFiles = fs.readdirSync('./src/events');
 
         for (const file of eventFiles) {
             const event = (await import(join(__dirname, `./events/${file}`)))
