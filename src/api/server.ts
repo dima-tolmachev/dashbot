@@ -2,6 +2,7 @@ import express from 'express';
 import { Client } from 'discord.js';
 import User from '../database/models/User';
 import { getMember } from '../utils/guildGetters';
+import config from '../config';
 
 const server = async (client: Client) => {
     const app = express();
@@ -51,7 +52,7 @@ const server = async (client: Client) => {
         }
     });
 
-    app.listen(3000);
+    app.listen(config.port);
 };
 
 export default server;
