@@ -7,7 +7,7 @@ const UserSchema = new mongoose.Schema({
     deviceID: { type: String, required: false },
     IP: { type: String, required: false },
     expires: { type: Date, required: true },
-    freezed: { type: Boolean, required: false },
+    frozen: { type: Boolean, required: false },
 });
 
 export default mongoose.model('User', UserSchema, 'users');

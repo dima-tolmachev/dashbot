@@ -40,9 +40,6 @@ const client = new Client({
             }
         }
 
-        // Commands catcher
-        await import('./commands-catcher');
-
         // Connecting to the database & starting the bot
         await db;
         await client.login(TOKEN);

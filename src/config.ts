@@ -7,13 +7,13 @@ export default {
     freezedByDefault: false,
     renewalCategoryID: '1002182778072350730',
     renewalInstruction: `
-        Your subscription will be canceled tomorrow and you will lose an access to the server.
-        To renew your subscription, please follow the instruction below:
-        - Bla-bla 1
-        - Bla-bla 2
-        - Bla-bla 3
+Your subscription will be canceled tomorrow and you will lose an access to the server.
+To renew your subscription, please follow the instruction below:
+- Bla-bla 1
+- Bla-bla 2
+- Bla-bla 3
         
-        If you have any question, please contact us right here 
+If you have any question, please contact us right here 
     `,
     colors: {
         success: '#00FF00',
