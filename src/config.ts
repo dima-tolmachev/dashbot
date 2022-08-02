@@ -1,4 +1,5 @@
 export default {
+    port: 3000,
     guildID: '996794317681209427',
     memberRoleID: '1001862810323652648',
     logsChannelID: '1001514992056668160',

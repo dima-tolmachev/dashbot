@@ -2,8 +2,10 @@ import fs from 'fs';
 import { join } from 'path';
 import db from './database/connection';
 import { Client, Intents } from 'discord.js';
-import 'dotenv/config';
+import server from './api/server';
 import { intervalSetup } from './core/expirationCheck';
+import config from './config';
+import 'dotenv/config';
 
 const TOKEN = process.env.TOKEN as string;
 
@@ -48,6 +50,11 @@ const client = new Client({
         intervalSetup(client);
 
         console.log('Dashbot online!');
+
+        // Starting the server
+        server(client);
+
+        console.log(`Server online! Listening on port ${config.port}`);
     } catch (error) {
         console.error(new Date(), error);
         process.exit(1);
