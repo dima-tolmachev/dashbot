@@ -23,7 +23,16 @@ const client = new Client({
 (async () => {
     try {
         // Including all events
-        const eventFiles = fs.readdirSync('./src/events');
+        let eventFiles = [];
+
+        // Check if it is a production version
+        __filename.endsWith('.ts')
+            ? (eventFiles = fs
+                  .readdirSync('./src/events')
+                  .filter((file: string) => file.endsWith('.ts')))
+            : (eventFiles = fs
+                  .readdirSync('./build/events')
+                  .filter((file: string) => file.endsWith('.js')));
 
         for (const file of eventFiles) {
             const event = (await import(join(__dirname, `./events/${file}`)))
