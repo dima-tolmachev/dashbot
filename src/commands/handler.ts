@@ -8,6 +8,7 @@ import date from './admin/date';
 import stat from './admin/stat';
 import details from './everyone/details';
 import reset from './everyone/reset';
+import collapse from './admin/collapse';
 
 const commands: any = {
     help,
@@ -19,6 +20,7 @@ const commands: any = {
     stat,
     details,
     reset,
+    collapse,
 };
 
 const handler = (msg: Message, client: Client) => {

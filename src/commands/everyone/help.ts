@@ -12,6 +12,7 @@ const command = (msg: Message) => {
 !freeze [member id] - Freezes member's subscription*
 !unfreeze [member id] - Unfreezes member's subscription*
 !stat - Shows the stats of the server*
+!collapse - Remove every single subscription on the database* 
 
 * - available only for admins
 \`\`\`
