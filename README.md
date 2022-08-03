@@ -12,13 +12,13 @@ The dashboard for your private discord server that helps you controll subscripti
 
 ### How to install and launch
 
-1. Clone application with git
-   `git clone https://github.com/dima-tolmachev/dashbot`
-2. Install dependencies
-   `yarn`
-3. Move to directory
-   `cd dashbot`
-4. Create `.env` file right here
+1. Clone application with git <br />
+`git clone https://github.com/dima-tolmachev/dashbot`
+2. Install dependencies <br />
+`yarn`
+3. Move to directory <br />
+`cd dashbot`
+4. Create **.env** file right here <br />
 
 ```
 dbURL="MONGO DB URL TO THE DATABASE"
@@ -62,21 +62,24 @@ APPLICATION_ID="DISCORD APP ID"
 
 The REST API to the dashbot is described below.
 
-**GET /**
-_Test if server works_
-`curl -i http://localhost:3000/`
-Response:
+**GET /** <br />
+_Test if server works_ <br />
+`curl -i http://localhost:3000/` <br />
+
+Response: <br />
 **the phrase 'API works' and current server time, status code 200**
 
-**POST /check_key**
-`curl -i -H 'Accept: application/json' http://localhost:3000/check_key/`
-Body example:
-{ license: 'xxxxx-xxxxx-xxxxx-xxxxx, deviceID: 'Apple M1, D222010393'}
+**POST /check_key** <br />
+_3rd party app auth_ <br />
+`curl -i -H 'Accept: application/json' http://localhost:3000/check_key/` <br />
 
-Response:
-**if license key and device matches**
-{ activations: 'ok', user: { name: "DISCORD USERNAME" }}
-**if license key is linked to another device (IP or device ID doesn't match)**
-{ message: 'device error'}
-**if license key is wrong**
-{ message: 'license not found'}
+Body example: <br />
+{ license: 'xxxxx-xxxxx-xxxxx-xxxxx, deviceID: 'Apple M1, D222010393'} <br />
+
+Response: <br />
+**if license key and device matches** <br />
+{ activations: 'ok', user: { name: "DISCORD USERNAME" }}  <br />
+**if license key is linked to another device (IP or device ID doesn't match)** <br />
+{ message: 'device error'} <br />
+**if license key is wrong** <br />
+{ message: 'license not found'} <br />
