@@ -11,7 +11,7 @@ export default (
     const channel = getLogsChannel(client);
     const msg = new MessageEmbed()
         .setTitle(action)
-        .setDescription(`<@${memberID}>`)
+        .setDescription(memberID ? `<@${memberID}>` : '')
         .setColor(color as ColorResolvable);
 
     channel?.send({ embeds: [msg] });

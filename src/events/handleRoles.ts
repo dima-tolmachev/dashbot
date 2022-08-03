@@ -39,19 +39,13 @@ export default {
             oldMember?.roles.cache.has(memberRoleID) &&
             !newMember?.roles.cache.has(memberRoleID)
         ) {
-            (await removeSubscription(memberID, client))
-                ? log(
-                      'Subscription removed successfully',
-                      memberID,
-                      config.colors.success,
-                      client,
-                  )
-                : log(
-                      'Subscription remove fail',
-                      memberID,
-                      config.colors.error,
-                      client,
-                  );
+            await removeSubscription(memberID, client);
+            log(
+                'Subscription removed successfully',
+                memberID,
+                config.colors.success,
+                client,
+            );
         }
     },
 };
