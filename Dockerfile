@@ -11,9 +11,11 @@ WORKDIR /usr/src
 COPY . /usr/src
 
 # install dependencies
-RUN yarn install
-RUN yarn install -g ts-node
+RUN yarn
+RUN yarn add global typescript
+RUN yarn add global ts-node
 
 # start app
 RUN yarn build 
+EXPOSE 3000
 CMD yarn start 
