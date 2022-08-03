@@ -6,6 +6,8 @@ import { assignRole } from '../utils/roleManagment';
 import config from '../config';
 import generateLicenseKey from '../utils/generateLicenseKey';
 
+const dayInMS = 1000 * 60 * 60 * 24;
+
 // Safely assign a subscription to the server participant
 const assignSubscription = async (
     discordID: string,
@@ -20,7 +22,7 @@ const assignSubscription = async (
         const member = getMember(discordID, client);
         const roles = member?.roles.cache.map((role) => role.id) || [];
         const license = generateLicenseKey();
-        const expires = new Date(Date.now() + config.licenseDuration);
+        const expires = new Date(Date.now() + dayInMS);
         const freezed = config.freezedByDefault;
 
         user = { discordID, roles, license, expires, freezed };

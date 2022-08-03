@@ -3,6 +3,8 @@ import assignSubscription from '../core/assignSubscription';
 import removeSubscription from '../core/removeSubscription';
 import config from '../config';
 import log from '../utils/log';
+import User from '../database/models/User';
+import { createPrivateChannel } from '../core/renewCategoryControl';
 
 export default {
     name: 'guildMemberUpdate',
@@ -19,19 +21,23 @@ export default {
             !oldMember?.roles.cache.has(memberRoleID) &&
             newMember?.roles.cache.has(memberRoleID)
         ) {
-            (await assignSubscription(memberID, client))
-                ? log(
-                      'Subscription assigned',
-                      memberID,
-                      config.colors.success,
-                      client,
-                  )
-                : log(
-                      'Subscription assignment failed',
-                      memberID,
-                      config.colors.error,
-                      client,
-                  );
+            if (!(await User.findOne({ discordID: memberID }))) {
+                createPrivateChannel(memberID, client);
+            } else {
+                (await assignSubscription(memberID, client))
+                    ? log(
+                          'Subscription assigned',
+                          memberID,
+                          config.colors.success,
+                          client,
+                      )
+                    : log(
+                          'Subscription assignment failed',
+                          memberID,
+                          config.colors.error,
+                          client,
+                      );
+            }
         }
 
         // User had role and now doesn't have it anymore

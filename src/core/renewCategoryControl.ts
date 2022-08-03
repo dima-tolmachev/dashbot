@@ -1,6 +1,7 @@
 import { Client, TextChannel } from 'discord.js';
 import { getGuild, getMember } from '../utils/guildGetters';
 import config from '../config';
+import log from '../utils/log';
 
 // Create a private channel for renewing the subscription
 export const createPrivateChannel = async (
@@ -33,6 +34,7 @@ export const createPrivateChannel = async (
     if (channel) {
         channel = channel as TextChannel;
         await channel.send(`${config.renewalInstruction}\n<@${memberID}>`);
+        log('Renewal channel created', memberID, config.colors.success, client);
     }
 
     return new Promise((resolve) => resolve(channel));

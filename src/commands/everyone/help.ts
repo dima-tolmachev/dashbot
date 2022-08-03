@@ -12,6 +12,7 @@ const help = (msg: Message) => {
 !freeze [member id] - Freezes member's subscription*
 !unfreeze [member id] - Unfreezes member's subscription*
 !stat - Shows the stats of the server*
+!paid [member id] - Adds 30 days from member's subscription by default (depends on config)*
 !collapse - Remove every single subscription on the database* 
 
 * - available only for admins
