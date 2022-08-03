@@ -29,7 +29,6 @@ const server = async (client: Client) => {
 
     // Third party apps auth endpoint
     app.post('/check_key', async (req: any, res: any) => {
-        console.log(req.body);
         const { key, device } = req.body;
 
         const user = await User.findOne({ license: key });
