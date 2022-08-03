@@ -1,9 +1,10 @@
+// Delete all users from the database, and remove all their roles
 import { Client, Message, MessageEmbed } from 'discord.js';
 import User from '../../database/models/User';
 import { getGuild } from '../../utils/guildGetters';
 import config from '../../config';
 
-const command = async (msg: Message, client: Client) => {
+const collapse = async (msg: Message, client: Client) => {
     if (msg.member?.permissions.has('ADMINISTRATOR')) {
         if (
             msg.content.startsWith('!collapse everything, I am sure about it')
@@ -24,4 +25,4 @@ const command = async (msg: Message, client: Client) => {
     }
 };
 
-export default command;
+export default collapse;

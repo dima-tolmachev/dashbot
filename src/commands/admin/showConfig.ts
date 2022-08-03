@@ -2,7 +2,7 @@
 import { Message } from 'discord.js';
 import config from '../../config';
 
-const command = (msg: Message) => {
+const showConfig = (msg: Message) => {
     if (msg.member?.permissions.has('ADMINISTRATOR')) {
         msg.reply(`\`\`\`json\n${JSON.stringify(config)}\`\`\``);
     } else {
@@ -10,4 +10,4 @@ const command = (msg: Message) => {
     }
 };
 
-export default command;
+export default showConfig;

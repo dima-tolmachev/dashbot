@@ -2,6 +2,7 @@ import { Client, TextChannel } from 'discord.js';
 import { getGuild, getMember } from '../utils/guildGetters';
 import config from '../config';
 
+// Create a private channel for renewing the subscription
 export const createPrivateChannel = async (
     memberID: string,
     client: Client,
@@ -37,6 +38,8 @@ export const createPrivateChannel = async (
     return new Promise((resolve) => resolve(channel));
 };
 
+
+// Find the channel by the member's ID
 export const findPrivateChannelByUser = async (
     memberID: string,
     client: Client,
@@ -48,6 +51,7 @@ export const findPrivateChannelByUser = async (
     return new Promise((resolve) => resolve(channel as TextChannel));
 };
 
+// Remove a private-renewal channel from the server
 export const removePrivateChannel = async (
     channelID: string,
     client: Client,

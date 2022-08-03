@@ -1,7 +1,7 @@
 // Responses back with availiable commands list
 import { Message } from 'discord.js';
 
-const command = (msg: Message) => {
+const help = (msg: Message) => {
     msg.reply(`
 \`\`\`
 !config - Shows the current config on the server
@@ -19,4 +19,4 @@ const command = (msg: Message) => {
     `);
 };
 
-export default command;
+export default help;

@@ -10,6 +10,7 @@ import {
 
 const dayInMilliseconds = 1000 * 60 * 60 * 24;
 
+// Set the interval to check for expired keys
 export const intervalSetup = (client: Client): void => {
     const startHour = config.licenseCheckTimePM;
 
@@ -30,6 +31,7 @@ export const intervalSetup = (client: Client): void => {
     }, dif);
 };
 
+// Check database for expired keys and remove them or open renewal channels
 const checkExpiredKeys = (client: Client): void => {
     const guild = getGuild(client);
     guild?.members.cache.forEach(async (member) => {

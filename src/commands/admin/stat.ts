@@ -1,9 +1,9 @@
-import { Client, GuildMember, Message, MessageEmbed } from 'discord.js';
+import { Client, Message, MessageEmbed } from 'discord.js';
 import User from '../../database/models/User';
 import config from '../../config';
 import { getGuild } from '../../utils/guildGetters';
 
-const command = async (msg: Message, client: Client) => {
+const stat = async (msg: Message, client: Client) => {
     if (msg.member?.permissions.has('ADMINISTRATOR')) {
         const guild = getGuild(client);
 
@@ -45,4 +45,4 @@ const command = async (msg: Message, client: Client) => {
     }
 };
 
-export default command;
+export default stat;

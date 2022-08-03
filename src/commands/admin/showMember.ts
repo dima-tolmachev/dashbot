@@ -1,8 +1,8 @@
-// Responses back with config setup
+// Responses back with member details
 import { Message, MessageEmbed } from 'discord.js';
 import User from '../../database/models/User';
 
-const command = async (msg: Message) => {
+const showMember = async (msg: Message) => {
     if (msg.member?.permissions.has('ADMINISTRATOR')) {
         const message = msg.content.split(' ');
 
@@ -45,4 +45,4 @@ const command = async (msg: Message) => {
     }
 };
 
-export default command;
+export default showMember;

@@ -1,7 +1,8 @@
+// Unfreeze user's subscription
 import { Message } from 'discord.js';
 import User from '../../database/models/User';
 
-const command = async (msg: Message) => {
+const unfreeze = async (msg: Message) => {
     if (msg.member?.permissions.has('ADMINISTRATOR')) {
         const message = msg.content.split(' ');
         if (message.length > 1) {
@@ -21,4 +22,4 @@ const command = async (msg: Message) => {
     }
 };
 
-export default command;
+export default unfreeze;

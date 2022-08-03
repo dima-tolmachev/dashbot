@@ -4,7 +4,9 @@ import User from '../database/models/User';
 import { removeRole } from '../utils/roleManagment';
 import config from '../config';
 
-export default async (
+
+// Safely remove a subscription from the server participant 
+const removeSubscription = async (
     discordID: string,
     client: Client,
 ): Promise<userObject | null> => {
@@ -17,3 +19,5 @@ export default async (
 
     return new Promise((resolve) => resolve(user));
 };
+
+export default removeSubscription;

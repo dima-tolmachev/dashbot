@@ -1,6 +1,7 @@
 import { Client, ColorResolvable, MessageEmbed } from 'discord.js';
 import { getLogsChannel } from './guildGetters';
 
+// Send logs to the logs channel
 export default (
     action: string,
     memberID: string,

@@ -23,6 +23,7 @@ const commands: any = {
     collapse,
 };
 
+// Function that handles every single command from the discord text channel
 const handler = (msg: Message, client: Client) => {
     var tokens = msg.content.split(' ');
     var command = tokens.shift();

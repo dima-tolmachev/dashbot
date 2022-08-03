@@ -1,7 +1,8 @@
+// Reset license key to use it on another device
 import { Message } from 'discord.js';
 import User from '../../database/models/User';
 
-const command = async (msg: Message) => {
+const reset = async (msg: Message) => {
     const member = await User.findOneAndUpdate(
         { discordID: msg.author.id },
         { $set: { IP: '', deviceID: '' } },
@@ -14,4 +15,4 @@ const command = async (msg: Message) => {
     }
 };
 
-export default command;
+export default reset;

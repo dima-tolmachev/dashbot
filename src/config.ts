@@ -1,3 +1,5 @@
+// Check REAMDE.md for the information how to fill this file
+
 export default {
     port: 3000,
     guildID: '996794317681209427',

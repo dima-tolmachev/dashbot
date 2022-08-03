@@ -6,7 +6,9 @@ import { assignRole } from '../utils/roleManagment';
 import config from '../config';
 import generateLicenseKey from '../utils/generateLicenseKey';
 
-export default async (
+
+// Safely assign a subscription to the server participant
+const assignSubscription = async (
     discordID: string,
     client: Client,
 ): Promise<userObject | null> => {
@@ -29,3 +31,5 @@ export default async (
 
     return new Promise((resolve) => resolve(user));
 };
+
+export default assignSubscription;

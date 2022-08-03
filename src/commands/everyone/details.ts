@@ -1,7 +1,8 @@
+// Get details of your subscription
 import { Message, MessageEmbed } from 'discord.js';
 import User from '../../database/models/User';
 
-const command = async (msg: Message) => {
+const details = async (msg: Message) => {
     const member = await User.findOne({ discordID: msg.author.id });
 
     if (member) {
@@ -28,4 +29,4 @@ const command = async (msg: Message) => {
     }
 };
 
-export default command;
+export default details;
