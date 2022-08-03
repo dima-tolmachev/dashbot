@@ -38,7 +38,6 @@ export const createPrivateChannel = async (
     return new Promise((resolve) => resolve(channel));
 };
 
-
 // Find the channel by the member's ID
 export const findPrivateChannelByUser = async (
     memberID: string,

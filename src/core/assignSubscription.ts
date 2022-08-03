@@ -6,7 +6,6 @@ import { assignRole } from '../utils/roleManagment';
 import config from '../config';
 import generateLicenseKey from '../utils/generateLicenseKey';
 
-
 // Safely assign a subscription to the server participant
 const assignSubscription = async (
     discordID: string,

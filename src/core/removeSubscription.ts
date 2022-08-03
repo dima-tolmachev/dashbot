@@ -4,8 +4,7 @@ import User from '../database/models/User';
 import { removeRole } from '../utils/roleManagment';
 import config from '../config';
 
-
-// Safely remove a subscription from the server participant 
+// Safely remove a subscription from the server participant
 const removeSubscription = async (
     discordID: string,
     client: Client,
