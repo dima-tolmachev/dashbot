@@ -1,6 +1,6 @@
 # Dashbot
 
-The dashboard for your private discord server that helps you controll subscription and collect renewal fees from participants
+The dashboard for your private discord server that helps you control subscription and collect renewal fees from participants
 
 ### Features
 
